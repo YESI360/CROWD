@@ -40,14 +40,17 @@ namespace FSG.MeshAnimator
                 agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
             }
 
-            //if (Input.GetButtonDown("Jump"))
-            //{
-            //    anim.SetBool("Run", true);
-            //}
-            //if (Input.GetButtonDown("Fire1"))
-            //{
-            //    anim.SetBool("Run", false);
-            //}
+            if (Input.GetButtonDown("Jump"))
+            {
+                anim.Play("RunningInPlace");
+                Debug.Log("SPACE");
+                //anim.SetBool("Run", true);
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.Play("Walk");
+                Debug.Log("CTRL");
+            }
         }
 
 

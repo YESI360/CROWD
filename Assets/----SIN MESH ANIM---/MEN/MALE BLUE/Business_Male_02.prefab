@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 6592068372368012598}
   - component: {fileID: 3083778665265073065}
   - component: {fileID: 2837180949318381812}
+  - component: {fileID: 4467141490641926127}
   m_Layer: 0
   m_Name: Business_Male_02
   m_TagString: spawn
@@ -301,7 +302,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -326,7 +327,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2246809309733516130}
-  speed: 2
+  speed: 1
+--- !u!114 &4467141490641926127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264271310850845279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82748877e2c88774bbbc4541eb41a7cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 6592068372368012598}
+  meshAnimator: {fileID: 2246809309733516130}
 --- !u!1 &372485454914879758
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6618463475597337316
 Transform:
   m_ObjectHideFlags: 0
@@ -2821,6 +2836,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Business_Male_01_AnimatedMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
+        type: 3}
+      propertyPath: nextTick
+      value: 8.336131
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
+        type: 3}
+      propertyPath: meshRenderer
+      value: 
+      objectReference: {fileID: 2002281062024648450}
+    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
+        type: 3}
+      propertyPath: currentAnimation
+      value: 
+      objectReference: {fileID: 11400000, guid: 73b69db4d745a4f47b64c9f93be25bbe,
+        type: 2}
     - target: {fileID: 7009533238718965159, guid: 13eb4ec99a96b9542b64929674f1cd02,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2896,22 +2927,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
-        type: 3}
-      propertyPath: nextTick
-      value: 11.469026
-      objectReference: {fileID: 0}
-    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
-        type: 3}
-      propertyPath: meshRenderer
-      value: 
-      objectReference: {fileID: 2002281062024648450}
-    - target: {fileID: 2207583345089112373, guid: 13eb4ec99a96b9542b64929674f1cd02,
-        type: 3}
-      propertyPath: currentAnimation
-      value: 
-      objectReference: {fileID: 11400000, guid: 73b69db4d745a4f47b64c9f93be25bbe,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13eb4ec99a96b9542b64929674f1cd02, type: 3}
 --- !u!4 &6974511377864802288 stripped

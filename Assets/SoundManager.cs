@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
     public pasosFR FemaleRScript;
 
     public AudioSource instrucciones;
-    public float delay = 10;
+    public float delay = 15;
 
     void Start()
     {

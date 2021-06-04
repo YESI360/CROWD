@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIControllerGoalsFR : MonoBehaviour
+namespace FSG.MeshAnimator
+{
+    public class AIControllerGoalsFR : MonoBehaviour
 {
     GameObject[] goalLocations;
     NavMeshAgent agent;
-    Animator anim;
-
+        //Animator anim;
+    public MeshAnimatorBase anim = null;
     public float speed;
+
+      
 
     void Start()
     {
@@ -17,10 +21,11 @@ public class AIControllerGoalsFR : MonoBehaviour
         agent = this.GetComponent<NavMeshAgent>();       
         agent.SetDestination(goalLocations[Random.Range (0, goalLocations.Length)].transform.position);
 
-        anim = this.GetComponent<Animator>();
-        anim.SetTrigger("Moving");
-
-    }
+            //anim = this.GetComponent<Animator>();
+            //anim.SetTrigger("Moving");
+        //anim.Play("Walk");
+            anim.Play("RunningInPlace");
+        }
 
     private void Update()
     {
@@ -31,19 +36,24 @@ public class AIControllerGoalsFR : MonoBehaviour
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         }
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            anim.SetBool("Run", true);
+            if (Input.GetButtonDown("Jump"))
+            {
+                anim.Play("RunningInPlace");
+                Debug.Log("SPACE");
+                //anim.SetBool("Run", true);
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.Play("Breathing Idle 1");
+                Debug.Log("CTRL");
+            }
+
+
+
+
         }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Run", false);
-        }
 
 
-
-
-    }
-
+}
 
 }

@@ -3,46 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIControllerGoalsMG : MonoBehaviour
+namespace FSG.MeshAnimator
 {
-    GameObject[] goalLocations;
-    NavMeshAgent agent;
-    Animator anim;
-    public float speed;
-
-    void Start()
+    public class AIControllerGoalsMG : MonoBehaviour
     {
-        goalLocations = GameObject.FindGameObjectsWithTag("GoalsG");
-        agent = this.GetComponent<NavMeshAgent>();       
-        agent.SetDestination(goalLocations[Random.Range (0, goalLocations.Length)].transform.position);
+        GameObject[] goalLocations;
+        NavMeshAgent agent;
+        //Animator anim;
+        public MeshAnimatorBase anim = null;
+        public float speed;
 
-        anim = this.GetComponent<Animator>();
-        anim.SetTrigger("Moving");
-
-    }
-
-    private void Update()
-    {
-        transform.Translate(0, 0, speed);
-
-        if (agent.remainingDistance < 3)
+        void Start()
         {
+            goalLocations = GameObject.FindGameObjectsWithTag("GoalsG");
+            agent = this.GetComponent<NavMeshAgent>();
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
+
+            //anim = this.GetComponent<Animator>();
+            //anim.SetTrigger("Moving");//empiezan en moving ON
+            anim.Play("RunningInPlace");
         }
 
-        if (Input.GetButtonDown("Jump"))
+        private void Update()
         {
-            anim.SetBool("Run", true);
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Run", false);
-        }
+            transform.Translate(0, 0, speed);
+
+            if (agent.remainingDistance < 3)
+            {
+                agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
+            }
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                anim.Play("RunningInPlace");
+                Debug.Log("jump");
+                //anim.SetBool("Run", true);
+            }
+            ////////////////////
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.Play("Breathing Idle 1");
+                Debug.Log("fire1");
+                //anim.SetBool("Run", false);
+
+            }
 
 
+
+
+        }
 
 
     }
-
-
 }
