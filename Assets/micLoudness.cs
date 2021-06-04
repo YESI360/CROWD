@@ -38,24 +38,19 @@ public class micLoudness : MonoBehaviour
         bool isInhaling = newvalue >= inhaleTriggerRange.x && newvalue <= inhaleTriggerRange.y;
         bool isExhaling = averagedLoudness >= exhaleTriggerThreshold;
 
-        //bool shouldPlayPop = isInhaling && !piiiip.isPlaying && !isComingBackFromPip;
-        //bool shouldPlayPip = isExhaling && !pop.isPlaying;
 
-        if (isInhaling )//&& !pop.isPlaying)  //(averagedLoudness < 0.14f)
+        if (isInhaling )  //(averagedLoudness < 0.14f)
         {
-            //Debug.Log("pop");
+
             transform.localScale = new Vector3(2f, 2f, 2f);
-            //pop.Play();
             //ambScript.StopPasos();
             //FemalePScript.StopPasos();
 
         }
 
-        else if (isExhaling)// && !piiiip.isPlaying)//&& averagedLoudness <= 0.60f )  //(averagedLoudness > 0.30f)
+        else if (isExhaling) //(averagedLoudness > 0.30f)
         {
-            //Debug.Log("piiiip");
             transform.localScale = new Vector3(2f + averagedLoudness * amp, 2f + averagedLoudness * amp, 2f + averagedLoudness * amp);
-            //piiiip.Play();
 
             ambScript.BajarPasos();
 

@@ -38,6 +38,7 @@ public class SpawnerMG : MonoBehaviour
         }
     }
 
+
     //public void apagar2 (int amount)
     //{
     //    for (int i =0; i< amount; i++)

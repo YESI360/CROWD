@@ -36,16 +36,16 @@ namespace FSG.MeshAnimator
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown("space"))
             {
                 anim.Play("RunningInPlace");
-                Debug.Log("SPACE");
+                //Debug.Log("SPACE");
                 //anim.SetBool("Run", true);
             }
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown("z"))
             {
                 anim.Play("Breathing Idle 1");
-                Debug.Log("CTRL");
+                //Debug.Log("CTRL");
             }
 
 

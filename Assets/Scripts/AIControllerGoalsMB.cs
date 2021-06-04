@@ -24,7 +24,7 @@ namespace FSG.MeshAnimator
             /////anim.SetFloat("Offset", Random.Range (0,1));
 
             //anim.SetTrigger("Moving");
-            anim.Play("Walk");
+            anim.Play("Walk");//???
             ///////float sm = Random.Range(1f, 2f); 
             //////anim.SetFloat("Speed", sm);
             /////agent.speed *= sm;
@@ -40,17 +40,17 @@ namespace FSG.MeshAnimator
                 agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
             }
 
-            if (Input.GetButtonDown("Jump"))
-            {
+                if (Input.GetKeyDown("space"))
+                {
                 anim.Play("RunningInPlace");
-                Debug.Log("SPACE");
-                //anim.SetBool("Run", true);
-            }
-            if (Input.GetButtonDown("Fire1"))
-            {
-                anim.Play("Walk");
-                Debug.Log("CTRL");
-            }
+                //Debug.Log("SPACE");
+
+                }
+                if (Input.GetKeyDown("z"))
+                {
+                 anim.Play("Walk");
+                //Debug.Log("CTRL");
+                }
         }
 
 

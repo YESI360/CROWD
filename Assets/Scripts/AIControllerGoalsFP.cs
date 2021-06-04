@@ -20,8 +20,9 @@ namespace FSG.MeshAnimator
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
 
             //anim = this.GetComponent<Animator>();
-           // anim.Play("Walk");
+            // anim.Play("Walk");
             anim.Play("RunningInPlace");
+            //anim.Play("Walk");
             //anim.SetTrigger("Moving");
 
         }
@@ -35,15 +36,16 @@ namespace FSG.MeshAnimator
                 agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown("space"))
             {
                 anim.Play("RunningInPlace");
                 //anim.Play("Run");
                 //anim.SetBool("Run", true);
             }
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown("z"))
             {
                 anim.Play("Breathing Idle 1");
+                //anim.Play("Walk");
                 //anim.SetBool("Run", false);
             }
 

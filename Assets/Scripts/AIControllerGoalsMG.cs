@@ -21,7 +21,8 @@ namespace FSG.MeshAnimator
 
             //anim = this.GetComponent<Animator>();
             //anim.SetTrigger("Moving");//empiezan en moving ON
-            anim.Play("RunningInPlace");
+            //anim.Play("RunningInPlace");
+            anim.Play("Walk");
         }
 
         private void Update()
@@ -33,16 +34,17 @@ namespace FSG.MeshAnimator
                 agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
             }
 
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetKeyDown("space"))
             {
                 anim.Play("RunningInPlace");
                 Debug.Log("jump");
                 //anim.SetBool("Run", true);
             }
             ////////////////////
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown("z"))
             {
-                anim.Play("Breathing Idle 1");
+               // anim.Play("Breathing Idle 1");
+                anim.Play("Walk");
                 Debug.Log("fire1");
                 //anim.SetBool("Run", false);
 

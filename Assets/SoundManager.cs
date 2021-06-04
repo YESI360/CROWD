@@ -26,10 +26,10 @@ public class SoundManager : MonoBehaviour
     public AudioSource instrucciones;
     public float delay = 15;
 
+
     void Start()
     {
-
-        instrucciones.PlayDelayed(delay);
+        playwithdelay();
 
         ambScript = SoundsGO.GetComponent<BajarVol>();
 
@@ -42,8 +42,22 @@ public class SoundManager : MonoBehaviour
         FemaleRScript = SpawnFRGO.GetComponent<pasosFR>();
     }
 
+    public void playwithdelay() 
+    {
+        instrucciones.PlayDelayed(delay);
+       
+    }
+
     void Update()
     {
+        //contador++;
+        //print(contador);
+
+        //if (contador == 800)
+        //{
+        //    instruccion00 = true;
+        //    contador = 0;
+        //}
 
         /*
         if (Input.GetKey("down"))

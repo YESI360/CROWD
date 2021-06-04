@@ -2901,7 +2901,7 @@ PrefabInstance:
     - target: {fileID: 7595031170462361917, guid: 0e2f0a50117109b4b88dc06258f12fbe,
         type: 3}
       propertyPath: nextTick
-      value: 1.7802576
+      value: 5.6883554
       objectReference: {fileID: 0}
     - target: {fileID: 7595031170462361917, guid: 0e2f0a50117109b4b88dc06258f12fbe,
         type: 3}
