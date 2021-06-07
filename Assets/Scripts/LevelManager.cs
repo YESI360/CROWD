@@ -8,13 +8,13 @@ public class LevelManager : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    void Update()
-    {
-        if (Input.GetKey("left"))//(Input.GetMouseButtonDown(0))
-        {
-            LoadNextLevel();
-        }
-    }
+    //void Update()
+    //{
+    //    if (Input.GetKey("left"))//(Input.GetMouseButtonDown(0))
+    //    {
+    //        LoadNextLevel();
+    //    }
+    //}
 
     public void LoadNextLevel()
     {

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class AIControllerGoalsMG : MonoBehaviour
 {
-    GameObject[] goalLocations;
+    [SerializeField]GameObject[] goalLocations;
     NavMeshAgent agent;
     Animator anim;
     public float speed;
@@ -29,19 +29,6 @@ public class AIControllerGoalsMG : MonoBehaviour
         {
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            anim.SetBool("Run", true);
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Run", false);
-        }
-
-
-
-
     }
 
 

@@ -9,8 +9,8 @@ namespace FSG.MeshAnimator
     {
         GameObject[] goalLocations;
         NavMeshAgent agent;
-        //Animator anim;
-        public MeshAnimatorBase anim = null;
+        Animator anim;
+        //public MeshAnimatorBase anim = null;
         public float speed;
 
         void Start()
@@ -19,15 +19,8 @@ namespace FSG.MeshAnimator
             agent = this.GetComponent<NavMeshAgent>();
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
 
-            //anim = this.GetComponent<Animator>();
-
-            /////anim.SetFloat("Offset", Random.Range (0,1));
-
-            //anim.SetTrigger("Moving");
-            anim.Play("Walk");
-            ///////float sm = Random.Range(1f, 2f); 
-            //////anim.SetFloat("Speed", sm);
-            /////agent.speed *= sm;
+            anim = this.GetComponent<Animator>();
+            anim.SetTrigger("Moving");
 
         }
 
@@ -39,18 +32,6 @@ namespace FSG.MeshAnimator
             {
                 agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
             }
-
-            //if (Input.GetButtonDown("Jump"))
-            //{
-            //    anim.SetBool("Run", true);
-            //}
-            //if (Input.GetButtonDown("Fire1"))
-            //{
-            //    anim.SetBool("Run", false);
-            //}
         }
-
-
-
     }
 }

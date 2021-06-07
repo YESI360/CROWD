@@ -30,20 +30,5 @@ public class AIControllerGoalsFR : MonoBehaviour
         {
             agent.SetDestination(goalLocations[Random.Range(0, goalLocations.Length)].transform.position);
         }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            anim.SetBool("Run", true);
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            anim.SetBool("Run", false);
-        }
-
-
-
-
     }
-
-
 }
